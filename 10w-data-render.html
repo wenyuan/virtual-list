@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <title>一次性渲染10w条数据</title>
+</head>
+
+<body>
+  <div>
+    <button id="button">载入数据</button><br>
+    <ul id="container"></ul>
+  </div>
+</body>
+<script type="text/javascript">
+  document.getElementById('button').addEventListener('click', function () {
+    // 记录任务开始时间
+    let now = Date.now();
+    // 插入10w条数据
+    const total = 100000;
+    // 获取容器
+    let ul = document.getElementById('container');
+    // 将数据插入容器中
+    for (let i = 0; i < total; i++) {
+      let li = document.createElement('li');
+      li.innerText = `第 ${i+1} 条数据`;
+      ul.appendChild(li);
+    }
+    console.log('JS运行时间(ms)：', Date.now() - now);
+    setTimeout(() => {
+      console.log('总运行时间(ms)：', Date.now() - now);
+    }, 0)
+  })
+</script>
+
+</html>
