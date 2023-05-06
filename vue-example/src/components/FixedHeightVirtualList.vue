@@ -2,25 +2,29 @@
   <div ref="list" class="infinite-list-container" @scroll="scrollEvent($event)">
     <div class="infinite-list-phantom" :style="{ height: listHeight + 'px' }"></div>
     <div class="infinite-list" :style="{ transform: getTransform }">
-      <div ref="items" class="infinite-list-item" v-for="item in visibleData" :key="item.id"
-        :style="{ height: itemSize + 'px', lineHeight: itemSize + 'px' }">{{ item.value }}</div>
+      <div ref="items"
+        class="infinite-list-item" 
+        v-for="item in visibleData" 
+        :key="item.id"
+        :style="{ height: itemSize + 'px',lineHeight: itemSize + 'px' }"
+      >{{ item.value }}</div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'VirtualList',
+  name: 'FixedHeightVirtualList',
   props: {
     //所有列表数据
     listData: {
       type: Array,
-      default: () => []
+      default: ()=>[]
     },
     //每项高度
     itemSize: {
       type: Number,
-      default: 200
+      default:200
     }
   },
   computed: {
@@ -38,7 +42,7 @@ export default {
     },
     //获取真实显示列表数据
     visibleData() {
-      return this.listData.slice(this.start, Math.min(this.end, this.listData.length));
+      return this.listData.slice(this.start, Math.min(this.end,this.listData.length));
     }
   },
   mounted() {
@@ -49,13 +53,13 @@ export default {
   data() {
     return {
       //可视区域高度
-      screenHeight: 0,
+      screenHeight:0,
       //偏移量
-      startOffset: 0,
+      startOffset:0,
       //起始索引
-      start: 0,
+      start:0,
       //结束索引
-      end: null,
+      end:null,
     };
   },
   methods: {

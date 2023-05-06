@@ -14,10 +14,10 @@
 
 <script>
 export default {
-  name:'VirtualList',
+  name: 'CommonVirtualList',
   props: {
     //所有列表数据
-    listData:{
+    listData: {
       type:Array,
       default:()=>[]
     },
@@ -27,13 +27,13 @@ export default {
       default:200
     }
   },
-  computed:{
+  computed: {
     //列表总高度
-    listHeight(){
+    listHeight() {
       return this.listData.length * this.itemSize;
     },
     //获取真实显示列表数据
-    visibleData(){
+    visibleData() {
       return this.listData;
     }
   },

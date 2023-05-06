@@ -1,21 +1,21 @@
 <template>
   <div id="app">
     <button @click="loadData">载入数据</button>
-    <CommonList :listData="listData" :itemSize="100" />
-    <!-- <FixedHeightVirtualList :listData="listData" :itemSize="100" /> -->
+    <!-- <CommonList :listData="listData" :itemSize="100" /> -->
+    <FixedHeightVirtualList :listData="listData" :itemSize="100" />
   </div>
 </template>
 
 <script>
-import CommonList from './components/CommonList.vue'
-// import FixedHeightVirtualList from './components/FixedHeightVirtualList.vue'
+// import CommonList from './components/CommonList.vue'
+import FixedHeightVirtualList from './components/FixedHeightVirtualList.vue'
 
 
 export default {
   name: 'App',
   components: {
-    CommonList,
-    // FixedHeightVirtualList
+    // CommonList,
+    FixedHeightVirtualList
   },
   data() {
     return {
