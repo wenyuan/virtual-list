@@ -18,8 +18,8 @@ export default {
   props: {
     //所有列表数据
     listData: {
-      type:Array,
-      default:()=>[]
+      type: Array,
+      default: () => []
     },
     //每项高度
     itemSize: {
