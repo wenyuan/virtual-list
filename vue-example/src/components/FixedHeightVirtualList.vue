@@ -19,12 +19,12 @@ export default {
     //所有列表数据
     listData: {
       type: Array,
-      default: ()=>[]
+      default: () => []
     },
     //每项高度
     itemSize: {
       type: Number,
-      default:200
+      default: 200
     }
   },
   computed: {
@@ -38,11 +38,11 @@ export default {
     },
     //偏移量对应的style
     getTransform() {
-      return `translate3d(0,${this.startOffset}px,0)`;
+      return `translate3d(0, ${this.startOffset}px, 0)`;
     },
     //获取真实显示列表数据
     visibleData() {
-      return this.listData.slice(this.start, Math.min(this.end,this.listData.length));
+      return this.listData.slice(this.start, Math.min(this.end, this.listData.length));
     }
   },
   mounted() {
@@ -52,10 +52,10 @@ export default {
   },
   data() {
     return {
-      //可视区域高度
-      screenHeight:0,
-      //偏移量
-      startOffset:0,
+      // 可视区域高度
+      screenHeight: 0,
+      // 偏移量
+      startOffset: 0,
       //起始索引
       start:0,
       //结束索引
