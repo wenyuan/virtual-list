@@ -56,10 +56,10 @@ export default {
       screenHeight: 0,
       // 偏移量
       startOffset: 0,
-      //起始索引
-      start:0,
-      //结束索引
-      end:null,
+      // 起始索引
+      start: 0,
+      // 结束索引
+      end: null,
     };
   },
   methods: {
