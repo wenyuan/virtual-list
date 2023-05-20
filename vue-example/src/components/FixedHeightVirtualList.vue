@@ -64,13 +64,13 @@ export default {
   },
   methods: {
     scrollEvent() {
-      //当前滚动位置
+      // 当前滚动位置
       let scrollTop = this.$refs.list.scrollTop;
-      //此时的开始索引
+      // 此时的开始索引
       this.start = Math.floor(scrollTop / this.itemSize);
-      //此时的结束索引
+      // 此时的结束索引
       this.end = this.start + this.visibleCount;
-      //此时的偏移量
+      // 此时的偏移量
       this.startOffset = scrollTop - (scrollTop % this.itemSize);
     }
   }
